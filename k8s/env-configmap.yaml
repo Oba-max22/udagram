@@ -4,8 +4,6 @@ data:
   AWS_BUCKET: project-bucket-3
   AWS_PROFILE: udacity
   AWS_REGION: us-east-1
-  POSTGRES_USERNAME: postgres
-  POSTGRES_PASSWORD: postgres
   POSTGRES_HOST: database-1.cw76whsj5new.us-east-1.rds.amazonaws.com
   POSTGRES_DB: postgres
   JWT_SECRET: testing
