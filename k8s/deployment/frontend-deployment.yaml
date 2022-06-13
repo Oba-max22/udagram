@@ -16,17 +16,8 @@ spec:
     spec:
       containers:
       - name: udagram-frontend
-        image: obamax22/udagram-frontend:latest
-        imagePullPolicy: Always 
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "1024Mi"
-            cpu: "500m"                  
+        image: obamax22/udagram-frontend:v6
+        imagePullPolicy: Always        
         env:
         - name: URL
           valueFrom:

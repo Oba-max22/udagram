@@ -4,8 +4,10 @@ data:
   AWS_BUCKET: project-bucket-3
   AWS_PROFILE: udacity
   AWS_REGION: us-east-1
-  POSTGRES_HOST: database-1.cw76whsj5new.us-east-1.rds.amazonaws.com
+  POSTGRES_HOST: mydb.czgjhyqqhip0.us-east-1.rds.amazonaws.com
   POSTGRES_DB: postgres
+  POSTGRES_USERNAME: postgres
+  POSTGRES_PASSWORD: postgres
   JWT_SECRET: testing
   URL: http://localhost:8100
 metadata:

@@ -17,14 +17,12 @@ spec:
       containers:
       - name: backend-user
         image: obamax22/udagram-api-user:latest
-        imagePullPolicy: Always 
-        resources:
-          requests:
-            memory: "512Mi"
-            cpu: "2000m"
-          limits:
-            memory: "8192Mi"
-            cpu: "4000m"                  
+        imagePullPolicy: Always     
+        envFrom:
+        - secretRef:
+            name: env-secret   
+        - secretRef:
+            name: aws-secret            
         env:
         - name: URL
           valueFrom:
@@ -61,14 +59,14 @@ spec:
             configMapKeyRef:
               name: env-config
               key: POSTGRES_HOST
-        - name: POSTGRES_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: env-secret
-              key: POSTGRES_PASSWORD
         - name: POSTGRES_USERNAME
           valueFrom:
-            secretKeyRef:
-              name: env-secret
-              key: POSTGRES_USERNAME        
+            configMapKeyRef:
+              name: env-config
+              key: POSTGRES_USERNAME
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: POSTGRES_PASSWORD     
       restartPolicy: Always
