@@ -17,7 +17,11 @@ spec:
       containers:
       - name: backend-user
         image: obamax22/udagram-api-user:latest
-        imagePullPolicy: Always     
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi      
         envFrom:
         - secretRef:
             name: env-secret   

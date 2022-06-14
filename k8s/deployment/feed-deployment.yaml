@@ -18,6 +18,10 @@ spec:
       - name: backend-feed
         image: obamax22/udagram-api-feed:latest
         imagePullPolicy: Always 
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi 
         envFrom:
         - secretRef:
             name: env-secret  
